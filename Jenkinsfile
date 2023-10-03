@@ -15,5 +15,19 @@ pipeline {
                echo "Deploying Code"
           }
       }
+      stage('parallel') {
+        parallel {
+            stage('parallel1') {
+                steps {
+                    echo "We are in parallel1"
+                }
+            }
+            stage('unitest') {
+                steps {
+                    echo "We are the upcoming devops engineers"
+                }
+            }
+        }
+      }
    }
 }
